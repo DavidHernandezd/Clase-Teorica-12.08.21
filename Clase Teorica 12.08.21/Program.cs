@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Clase_Teorica_12._08._21
 {
@@ -27,8 +28,8 @@ namespace Clase_Teorica_12._08._21
                 Console.Write("Escriba el valor para el elemento {0}: ", x);
                 numbers[x] = Convert.ToInt32(Console.ReadLine());
             }
-            
-            
+
+
             //ciclo while
             int i = 0;
             Console.WriteLine("IMPRIME ELEMENTOS CON WHILE");
@@ -51,10 +52,34 @@ namespace Clase_Teorica_12._08._21
                 Console.WriteLine("Posición {0} : {1}", j, numbers[j]);
             }
             Console.WriteLine("IMPRIME ELEMENTOS CON FOREACH");
-            foreach  (int item in numbers)
+            foreach (int item in numbers)
             {
                 Console.WriteLine(item);
+
+                static void Main(string[] args)
+                {
+                    Dictionary<string, string> EmployeeList = new Dictionary<string, string>();
+
+                    EmployeeList.Add("Jose Flores", "Programador");
+                    EmployeeList.Add("Miranda Campos", "Gerente");
+                    EmployeeList.Add("Carmen Valladares", "Arquitecta");
+
+                    Dictionary<string, int> Students = new Dictionary<string, int>();
+                    Students.Add("Jose Flores", 22);
+                    Students.Add("Miranda Campos", 20);
+                    Students.Add("Carmen Valladares", 25);
+
+                    foreach (KeyValuePair<string, string> employee in EmployeeList)
+                    {
+                        Console.WriteLine("Clave: {0}, Valor: {1}", employee.Key, employee.Value);
+                    }
+
+                    Console.WriteLine("Elementos en el diccionario: {0}", EmployeeList);
+
+                    Console.ReadKey();
+                }
             }
         }
     }
 }
+        
